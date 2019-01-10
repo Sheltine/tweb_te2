@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Query, ApolloProvider } from 'react-apollo';
 import { ApolloClient, InMemoryCache, HttpLink, ApolloLink } from 'apollo-boost';
-import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import gql from 'graphql-tag';
 import './App.css';
@@ -87,7 +86,7 @@ const query5 = gql`
       title,
       poster_path,
       release_date,
-
+      original_language
     },
   }
 }
@@ -95,7 +94,12 @@ const query5 = gql`
 
 class Upcoming extends Component {
 // eslint-disable-next-line class-methods-use-this
-
+constructor(props) {
+    super(props);
+    this.state = {
+        filter: 'fr',
+    };
+  }
 
   render() {
     return (
@@ -112,16 +116,20 @@ class Upcoming extends Component {
                   if (loading) return 'Loading...';
                   return (
                     <div>
-                      {data.upcomingMovies.results.map(movie => (
-                        <div className="Movies-style">
-                          <p>
-                            {movie.title}
-                          </p>
-                          {console.log(movie.poster_path)}
-                          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
-                          <i>Release: {movie.release_date}</i>
-                        </div>
-                      ))
+                      {data.upcomingMovies.results.map((movie) => {
+                          if (movie.original_language === this.state.filter) {
+                              return (
+                                <div className="Movies-style">
+                                  <p>
+                                    {movie.title}
+                                  </p>
+                                  {console.log(movie.poster_path)}
+                                  <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
+                                  <i>Release: {movie.release_date}</i>
+                                </div>
+                            );
+                          }
+                      })
                   } </div>
                   );
                 }}
@@ -134,16 +142,20 @@ class Upcoming extends Component {
                   if (loading) return 'Loading...';
                   return (
                     <div>
-                      {data.upcomingMovies.results.map(movie => (
-                        <div className="Movies-style">
-                          <p>
-                            {movie.title}
-                          </p>
-                          {console.log(movie.poster_path)}
-                          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
-                          <i>Release: {movie.release_date}</i>
-                        </div>
-                      ))
+                      {data.upcomingMovies.results.map((movie) => {
+                          if (movie.original_language === this.state.filter) {
+                              return (
+                                <div className="Movies-style">
+                                  <p>
+                                    {movie.title}
+                                  </p>
+                                  {console.log(movie.poster_path)}
+                                  <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
+                                  <i>Release: {movie.release_date}</i>
+                                </div>
+                            );
+                          }
+                      })
                   } </div>
                   );
                 }}
@@ -156,16 +168,20 @@ class Upcoming extends Component {
                   if (loading) return 'Loading...';
                   return (
                     <div>
-                      {data.upcomingMovies.results.map(movie => (
-                        <div className="Movies-style">
-                          <p>
-                            {movie.title}
-                          </p>
-                          {console.log(movie.poster_path)}
-                          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
-                          <i>Release: {movie.release_date}</i>
-                        </div>
-                      ))
+                      {data.upcomingMovies.results.map((movie) => {
+                          if (movie.original_language === this.state.filter) {
+                              return (
+                                <div className="Movies-style">
+                                  <p>
+                                    {movie.title}
+                                  </p>
+                                  {console.log(movie.poster_path)}
+                                  <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
+                                  <i>Release: {movie.release_date}</i>
+                                </div>
+                            );
+                          }
+                      })
                   } </div>
                   );
                 }}
@@ -178,16 +194,20 @@ class Upcoming extends Component {
                   if (loading) return 'Loading...';
                   return (
                     <div>
-                      {data.upcomingMovies.results.map(movie => (
-                        <div className="Movies-style">
-                          <p>
-                            {movie.title}
-                          </p>
-                          {console.log(movie.poster_path)}
-                          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
-                          <i>Release: {movie.release_date}</i>
-                        </div>
-                      ))
+                      {data.upcomingMovies.results.map((movie) => {
+                          if (movie.original_language === this.state.filter) {
+                              return (
+                                <div className="Movies-style">
+                                  <p>
+                                    {movie.title}
+                                  </p>
+                                  {console.log(movie.poster_path)}
+                                  <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
+                                  <i>Release: {movie.release_date}</i>
+                                </div>
+                            );
+                          }
+                      })
                   } </div>
                   );
                 }}
@@ -200,16 +220,20 @@ class Upcoming extends Component {
                   if (loading) return 'Loading...';
                   return (
                     <div>
-                      {data.upcomingMovies.results.map(movie => (
-                        <div className="Movies-style">
-                          <p>
-                            {movie.title}
-                          </p>
-                          {console.log(movie.poster_path)}
-                          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
-                          <i>Release: {movie.release_date}</i>
-                        </div>
-                      ))
+                      {data.upcomingMovies.results.map((movie) => {
+                          if (movie.original_language === this.state.filter) {
+                              return (
+                                <div className="Movies-style">
+                                  <p>
+                                    {movie.title}
+                                  </p>
+                                  {console.log(movie.poster_path)}
+                                  <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
+                                  <i>Release: {movie.release_date}</i>
+                                </div>
+                            );
+                          }
+                      })
                   } </div>
                   );
                 }}
