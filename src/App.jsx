@@ -54,7 +54,6 @@ constructor(props) {
 }
 
 selectMovie(event) {
-  console.log('selected: ', event.target.alt);
   if (tmp.indexOf(event.target.alt) === -1) {
     tmp.push(event.target.alt);
 

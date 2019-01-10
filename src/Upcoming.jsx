@@ -110,8 +110,6 @@ constructor(props) {
             <ApolloProvider client={client}>
               <Query query={query}>
                 {({ data, loading, error }) => {
-                  console.log('error: ', error);
-                  console.log('data: ', data);
                   if (error) return 'Oups an error occured. Please check the console';
                   if (loading) return 'Loading...';
                   return (
@@ -123,7 +121,6 @@ constructor(props) {
                                   <p>
                                     {movie.title}
                                   </p>
-                                  {console.log(movie.poster_path)}
                                   <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
                                   <i>Release: {movie.release_date}</i>
                                 </div>
@@ -136,8 +133,6 @@ constructor(props) {
               </Query>
               <Query query={query2}>
                 {({ data, loading, error }) => {
-                  console.log('error: ', error);
-                  console.log('data: ', data);
                   if (error) return 'Oups an error occured. Please check the console';
                   if (loading) return 'Loading...';
                   return (
@@ -149,7 +144,6 @@ constructor(props) {
                                   <p>
                                     {movie.title}
                                   </p>
-                                  {console.log(movie.poster_path)}
                                   <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
                                   <i>Release: {movie.release_date}</i>
                                 </div>
@@ -162,8 +156,6 @@ constructor(props) {
               </Query>
               <Query query={query3}>
                 {({ data, loading, error }) => {
-                  console.log('error: ', error);
-                  console.log('data: ', data);
                   if (error) return 'Oups an error occured. Please check the console';
                   if (loading) return 'Loading...';
                   return (
@@ -175,7 +167,6 @@ constructor(props) {
                                   <p>
                                     {movie.title}
                                   </p>
-                                  {console.log(movie.poster_path)}
                                   <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
                                   <i>Release: {movie.release_date}</i>
                                 </div>
@@ -188,8 +179,6 @@ constructor(props) {
               </Query>
               <Query query={query4}>
                 {({ data, loading, error }) => {
-                  console.log('error: ', error);
-                  console.log('data: ', data);
                   if (error) return 'Oups an error occured. Please check the console';
                   if (loading) return 'Loading...';
                   return (
@@ -201,7 +190,6 @@ constructor(props) {
                                   <p>
                                     {movie.title}
                                   </p>
-                                  {console.log(movie.poster_path)}
                                   <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
                                   <i>Release: {movie.release_date}</i>
                                 </div>
@@ -214,8 +202,6 @@ constructor(props) {
               </Query>
               <Query query={query5}>
                 {({ data, loading, error }) => {
-                  console.log('error: ', error);
-                  console.log('data: ', data);
                   if (error) return 'Oups an error occured. Please check the console';
                   if (loading) return 'Loading...';
                   return (
@@ -227,7 +213,6 @@ constructor(props) {
                                   <p>
                                     {movie.title}
                                   </p>
-                                  {console.log(movie.poster_path)}
                                   <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} height={200} width="auto" />
                                   <i>Release: {movie.release_date}</i>
                                 </div>
